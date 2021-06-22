@@ -69,13 +69,14 @@
       }
       function removeTransition(event) {
         if (event.propertyName !== 'transform') return;
-
         event.target.classList.remove('playing');
       }
       const keys = Array.from(document.querySelectorAll('.key'));
+
       keys.forEach((key) =>
         addEventListener('transitionend', removeTransition)
       );
+
       window.addEventListener('keydown', playingSound);
     </script>
   </body>
